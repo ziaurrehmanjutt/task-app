@@ -9,6 +9,12 @@
         },
         "version": "1.0"
     },
+        "servers": [
+        {
+        "url": "https://api.example.com",
+        "description": "Production Server"
+        }
+    ],
     "paths": {
         "/api/login": {
             "post": {
