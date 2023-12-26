@@ -11,59 +11,62 @@ use Illuminate\Validation\ValidationException;
 
 /**
  * @OA\Info(
- *     title="Your API Title",
+ *     title="Zia - Apis Task",
  *     version="1.0",
- *     description="Your API Description",
+ *     description="Its app",
  *     @OA\Contact(
- *         email="contact@example.com",
- *         name="Your Name"
+ *         email="ziaa520@gmail.com",
+ *         name="Zia"
  *     )
  * )
  */
+
+
+
 
 class AuthController extends Controller
 {
 
 
-   /**
- * @OA\Post(
- *     path="/api/login",
- *     summary="Authenticate user and get access token",
- *     tags={"Authentication"},
- *     @OA\RequestBody(
- *         required=true,
- *         @OA\JsonContent(
- *             required={"email","password"},
- *             @OA\Property(property="email", type="string", format="email", example="user@example.com"),
- *             @OA\Property(property="password", type="string", format="password", example="password")
- *         )
- *     ),
- *     @OA\Response(
- *         response=200,
- *         description="Successful login",
- *         @OA\JsonContent(
- *             @OA\Property(property="token", type="string", description="Access token")
- *         )
- *     ),
- *     @OA\Response(
- *         response=401,
- *         description="Invalid credentials",
- *         @OA\JsonContent(
- *             @OA\Property(property="error", type="string", example="Unauthorized")
- *         )
- *     ),
- *     @OA\Response(
- *         response=422,
- *         description="Validation error",
- *         @OA\JsonContent(
- *             type="object",
- *             @OA\Property(property="message", type="string", example="The given data was invalid."),
- *             @OA\Property(property="errors", type="object", example={"email": {"The email field is required."}})
- *         )
- *     ),
- *     security={}
- * )
- */
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     summary="Authenticate user and get access token",
+     *     tags={"Authentication"},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             required={"email","password"},
+     *             @OA\Property(property="email", type="string", format="email", example="user@example.com"),
+     *             @OA\Property(property="password", type="string", format="password", example="password")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful login",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="token", type="string", description="Access token")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Invalid credentials",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="error", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="message", type="string", example="The given data was invalid."),
+     *             @OA\Property(property="errors", type="object", example={"email": {"The email field is required."}})
+     *         )
+     *     ),
+     *     security={}
+     * )
+     */
     public function login(Request $request)
     {
         $request->validate([
