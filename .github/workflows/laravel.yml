@@ -15,6 +15,8 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: secretroot
           MYSQL_ROOT_PASSWORD: secretroot
         ports:
           - 3306:3306
@@ -39,7 +41,7 @@ jobs:
       run: |
         mysql --version
         sudo apt-get install -y mysql-client
-        mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uuser -psecret -e "SHOW DATABASES"
+        mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -user -secretroot -e "SHOW DATABASES"
     # - name: Wait for MySQL to be ready
     #   run: |
     #     timeout=300
@@ -56,8 +58,8 @@ jobs:
     #     mkdir -p database
     #     touch database/database.sqlite
 
-    # - name: Run Migrations
-    #   run: php artisan migrate 
+    - name: Run Migrations
+      run: php artisan migrate 
     # - name: Run Seeders
     #   run: php artisan db:seed 
     # - name: Execute tests (Unit and Feature tests) via PHPUnit
