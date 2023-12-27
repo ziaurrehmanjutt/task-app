@@ -16,6 +16,8 @@ class CategorySeeder extends Seeder
             ['name' => 'Electronics'],
             ['name' => 'Clothing'],
             ['name' => 'Home Goods'],
+            ['name' => 'Vegetables'],
+            ['name' => 'Others'],
             // Add more categories as needed
         ]);
     }

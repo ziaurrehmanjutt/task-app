@@ -91,3 +91,39 @@ You can also import the API collection in Postman for testing:
 
 To use the API, you need to authenticate. You can do this by making a `POST` request to `/api/login` with valid credentials. Once authenticated, use the generated token in the Swagger UI or Postman for authorized requests.
 
+
+
+## Running Tests
+
+To execute the unit tests, you can use the following command:
+
+```bash
+php artisan test tests/Feature/ProductApiTest.php
+ ```
+
+
+## GitHub Actions Workflow
+
+This project includes a GitHub Actions workflow that automates testing. The workflow is triggered on every push to the `main` branch.
+
+### Workflow Configuration
+
+The workflow configuration file is located at `.github/workflows/laravel.yml`. It defines the steps to install dependencies, generate application key, set up the database, and run PHPUnit tests.
+
+### Triggering the Workflow
+
+The workflow is triggered automatically on every push to the `main` branch. Additionally, it runs on pull requests to the `main` branch.
+
+### Viewing Workflow Results
+
+You can view the workflow results by navigating to the "Actions" tab in your GitHub repository. This tab shows a history of workflow runs, including information about each run and details on any failures.
+
+### Manually Triggering the Workflow
+
+If needed, you can manually trigger the workflow by pushing a new commit to the `main` branch.
+
+```bash
+git add .
+git commit -m "Trigger GitHub Actions workflow"
+git push origin main
+ ```
