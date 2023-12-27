@@ -32,9 +32,9 @@ jobs:
         touch database/database.sqlite
 
     - name: Run Migrations
-      run: php artisan migrate --env=testing
+      run: php artisan migrate 
     - name: Run Seeders
-      run: php artisan db:seed --env=testing
+      run: php artisan db:seed 
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
