@@ -16,7 +16,7 @@ jobs:
         env:
           MYSQL_DATABASE: test_db
           MYSQL_USER: user
-          MYSQL_PASSWORD: secret
+          MYSQL_PASSWORD: secretroot
           MYSQL_ROOT_PASSWORD: secretroot
         ports:
           - 3306:3306
@@ -66,6 +66,6 @@ jobs:
       env:
         MYSQL_DATABASE: test_db
         DB_USERNAME: user
-        DB_PASSWORD: secret
+        DB_PASSWORD: secretroot
         DB_PORT: ${{ job.services.mysql.ports[3306] }}
       run: vendor/bin/phpunit
