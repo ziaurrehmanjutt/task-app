@@ -15,8 +15,6 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_DATABASE: test_db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: secretroot
           MYSQL_ROOT_PASSWORD: secretroot
         ports:
           - 3306:3306
