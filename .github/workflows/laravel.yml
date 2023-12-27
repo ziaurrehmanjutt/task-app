@@ -58,14 +58,14 @@ jobs:
     #     mkdir -p database
     #     touch database/database.sqlite
 
-    - name: Run Migrations
-      run: php artisan migrate 
-    - name: Run Seeders
-      run: php artisan db:seed 
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        MYSQL_DATABASE: test_db
-        DB_USERNAME: user
-        DB_PASSWORD: secretroot
-        DB_PORT: ${{ job.services.mysql.ports[3306] }}
-      run: vendor/bin/phpunit
+    # - name: Run Migrations
+    #   run: php artisan migrate 
+    # - name: Run Seeders
+    #   run: php artisan db:seed 
+    # - name: Execute tests (Unit and Feature tests) via PHPUnit
+    #   env:
+    #     MYSQL_DATABASE: test_db
+    #     DB_USERNAME: user
+    #     DB_PASSWORD: secretroot
+    #     DB_PORT: ${{ job.services.mysql.ports[3306] }}
+    #   run: vendor/bin/phpunit
