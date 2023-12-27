@@ -6,7 +6,7 @@ This project is a Laravel-based REST API for managing a product catalog. It incl
 
 ### Prerequisites
 
-- PHP (>= 7.4)
+- PHP (>= 8.1)
 - Composer
 - MySQL or another database supported by Laravel
 
@@ -15,13 +15,13 @@ This project is a Laravel-based REST API for managing a product catalog. It incl
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-laravel-product-api.git
+    git clone https://github.com/ziaurrehmanjutt/task-app.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd your-laravel-product-api
+    cd task-app
     ```
 
 3. Install dependencies:
@@ -59,10 +59,10 @@ This project is a Laravel-based REST API for managing a product catalog. It incl
     php artisan migrate
     ```
 
-8. (Optional) Seed the database with a default user:
+8.  Seed the database with  default user and Some Products and Categories:
 
     ```bash
-    php artisan db:seed --class=UserSeeder
+    php artisan db:seed 
     ```
 
 ### API Documentation
@@ -91,6 +91,26 @@ You can also import the API collection in Postman for testing:
 
 To use the API, you need to authenticate. You can do this by making a `POST` request to `/api/login` with valid credentials. Once authenticated, use the generated token in the Swagger UI or Postman for authorized requests.
 
+## API Rate Limiting
+
+This project implements API rate limiting to control the number of requests a client can make within a specific time frame. The rate limit is configured in the `app\Http\Kernel.php` file.
+
+### Rate Limit Configuration
+
+Open the `app\Http\Kernel.php` file and locate the `throttle` middleware configuration in the `$middlewareGroups` property:
+
+```php
+protected $middlewareGroups = [
+    'web' => [
+        // ...
+    ],
+
+    'api' => [
+        'throttle:api',
+        // ...
+    ],
+];
+ ```
 
 
 ## Running Tests
